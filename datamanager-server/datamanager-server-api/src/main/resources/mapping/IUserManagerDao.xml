@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.datamanager.server.api.systemmanager.usermanager.dao.IUserManagerDao" >
+    <resultMap id="UserVOMap" type="com.datamanager.server.api.systemmanager.usermanager.model.UserVO">
+        <result column="userid" property="userId" jdbcType="BIGINT"/>
+        <result column="username" property="userName" jdbcType="VARCHAR"/>
+        <result column="userpassword" property="userPassword" jdbcType="VARCHAR"/>
+        <result column="useremail" property="userEmail" jdbcType="VARCHAR"/>
+        <result column="usermobile" property="userMobile" jdbcType="VARCHAR"/>
+        <result column="usersalt" property="userSalt" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="userColumnList">
+        userid,username,userpassword,useremail,usermobile,usersalt
+    </sql>
+
+    <insert id="insertUser" parameterType="com.datamanager.server.api.systemmanager.usermanager.model.UserVO">
+        insert into user
+        (
+            userid,
+            username,
+            userpassword,
+            useremail,
+            usermobile,
+            userSalt)
+        values
+        (
+            #{userId,jdbcType=BIGINT},
+            #{userName,jdbcType=VARCHAR},
+            #{userPassword,jdbcType=VARCHAR},
+            #{userEmail,jdbcType=VARCHAR},
+            #{userMobile,jdbcType=VARCHAR},
+            #{userSalt,jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <select id="queryUserByUserId" resultMap="UserVOMap"  parameterType="Integer">
+        SELECT
+        <include refid="userColumnList" />
+        FROM user WHERE userid = #{userId}
+    </select>
+
+    <select id="queryUserByUserName" resultMap="UserVOMap"  parameterType="String">
+        SELECT
+        <include refid="userColumnList" />
+        FROM user WHERE username = #{userName}
+    </select>
+
+    <select id="queryUserByEmail" resultMap="UserVOMap"  parameterType="String">
+        SELECT
+        <include refid="userColumnList" />
+        FROM user WHERE useremail = #{userEmail}
+    </select>
+
+
+    <select id="queryUserByUserEmailAndUserPassword" resultMap="UserVOMap">
+        SELECT
+        <include refid="userColumnList" />
+        FROM user WHERE
+        1=1
+        and useremail = #{userEmail}
+        and userpassword = #{userpassword}
+    </select>
+
+    <select id="queryUserByUserNameAndUserPassword" resultMap="UserVOMap">
+        SELECT
+        <include refid="userColumnList" />
+        FROM user WHERE
+        1=1
+        and username = #{userName}
+        and userpassword = #{userPassword}
+    </select>
+
+    <select id="queryUser" resultMap="UserVOMap">
+        SELECT
+        <include refid="userColumnList" />
+        FROM user
+    </select>
+
+</mapper>

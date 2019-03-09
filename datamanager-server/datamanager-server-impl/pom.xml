@@ -10,6 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>datamanager-server-impl</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.datamanager</groupId>
+            <artifactId>datamanager-server-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
