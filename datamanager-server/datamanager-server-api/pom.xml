@@ -6,10 +6,19 @@
         <artifactId>datamanager-server</artifactId>
         <groupId>com.datamanager</groupId>
         <version>1.0</version>
+
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>datamanager-server-api</artifactId>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId></groupId>
+                <artifactId></artifactId>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
 </project>

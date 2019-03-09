@@ -6,6 +6,10 @@
     <file url="file://$PROJECT_DIR$/datamanager-client/datamanager-client-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/datamanager-client/datamanager-client-impl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/datamanager-client/datamanager-client-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/datamanager-extract" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/datamanager-extract/datamanager-extract-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/datamanager-extract/datamanager-extract-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/datamanager-extract/datamanager-extract-main" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/datamanager-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/datamanager-server/datamanager-server-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/datamanager-server/datamanager-server-impl" charset="UTF-8" />

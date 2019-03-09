@@ -6,13 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="datamanager-client-api" />
-        <module name="datamanager-client-impl" />
-        <module name="datamanager-client-web" />
+        <module name="datamanager-client" />
+        <module name="datamanager-extract-api" />
+        <module name="datamanager-extract-impl" />
+        <module name="datamanager-extract-main" />
         <module name="datamanager-server-api" />
         <module name="datamanager-server-impl" />
         <module name="datamanager-server-web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="datamanager-client" target="1.8" />
+      <module name="datamanager-client-api" target="1.8" />
+      <module name="datamanager-client-impl" target="1.8" />
+      <module name="datamanager-client-web" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

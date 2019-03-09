@@ -2,7 +2,7 @@ package com.datamanager.server.impl.systemmanager.sessionmanager.helper;
 
 import com.datamanager.server.api.systemmanager.usermanager.model.UserVO;
 import com.datamanager.server.impl.systemmanager.others.utils.ProtostuffUtil;
-import com.datamanager.server.impl.systemmanager.redismanager.utils.RedisService;
+import com.datamanager.server.impl.systemmanager.redismanager.impl.RedisManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +21,7 @@ import java.util.UUID;
 public class CookieHelper {
 
     @Autowired
-    RedisService redisService;
+    RedisManagerService redisService;
 
     public boolean addCookie(HttpServletResponse response, String token, UserVO user) {
         try{

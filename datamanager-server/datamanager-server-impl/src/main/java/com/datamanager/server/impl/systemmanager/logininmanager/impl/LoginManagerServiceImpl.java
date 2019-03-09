@@ -1,5 +1,4 @@
 package com.datamanager.server.impl.systemmanager.logininmanager.impl;
-
 import com.datamanager.server.api.systemmanager.logininmanager.service.ILoginManagerService;
 import com.datamanager.server.api.systemmanager.usermanager.model.UserVO;
 import com.datamanager.server.api.systemmanager.usermanager.service.IUserManagerService;
@@ -8,16 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-@Service("loginManagerService")
+@Service("loginService")
 public class LoginManagerServiceImpl implements ILoginManagerService {
 	
 	@Autowired
-	private IUserManagerService iUserService;
+	private IUserManagerService iUserManagerService;
 
 	@Override
 	public UserVO loginUserByUserNameAndUserPassword(String userName, String userPassword) {
 		UserVO userVO = null;
-		userVO = iUserService.queryUserByUserName(userName);
+		userVO = iUserManagerService.queryUserByUserName(userName);
 		boolean checkPassword = DoubleMD5Util.validatePasword(userPassword,userVO.getUserPassword(),userVO.getUserSalt());
 		if(!checkPassword){
 			return null;
@@ -27,8 +26,8 @@ public class LoginManagerServiceImpl implements ILoginManagerService {
 
 	@Override
 	public UserVO loginUserByUserEmailAndUserPassword(String userEmail, String userPassword) {
-		UserVO userVO = iUserService.queryUserByUserEmail(userEmail);
-		userVO = iUserService.queryUserByUserEmailAndUserPassword(userEmail, DoubleMD5Util.genMD5(userVO.getUserPassword(),userVO.getUserSalt()));
+		UserVO userVO = iUserManagerService.queryUserByUserEmail(userEmail);
+		userVO = iUserManagerService.queryUserByUserEmailAndUserPassword(userEmail, DoubleMD5Util.genMD5(userVO.getUserPassword(),userVO.getUserSalt()));
 		return userVO;
 	}
 }
