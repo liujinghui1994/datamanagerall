@@ -1,4 +1,4 @@
-package com.datamanager.server.impl.systemmanager.others.utils;
+package com.datamanager.server.impl.systemmanager.idmanager.utils;
 
 import org.springframework.stereotype.Component;
 
@@ -10,22 +10,21 @@ import org.springframework.stereotype.Component;
  * @create: 2018-11-24 10:38
  **/
 @Component
-public class coreIdWorker {
+public class CoreIdWorker {
 
-    private coreIdWorker(){};
+    private CoreIdWorker(){};
     private static class IdWorkerCreater{
-        private static coreIdWorker idWorker = new coreIdWorker(1,1,1);
+        private static CoreIdWorker idWorker = new CoreIdWorker(1,1,1);
     }
     public static long getKey(){
         System.out.println("=======initkey======");
         return IdWorkerCreater.idWorker.nextId();
     }
-
     private long workerId;
     private long datacenterId;
     private long sequence;
 
-    public coreIdWorker(long workerId, long datacenterId, long sequence){
+    public CoreIdWorker(long workerId, long datacenterId, long sequence){
         // sanity check for workerId
         if (workerId > maxWorkerId || workerId < 0) {
             throw new IllegalArgumentException(String.format("worker Id can't be greater than %d or less than 0",maxWorkerId));

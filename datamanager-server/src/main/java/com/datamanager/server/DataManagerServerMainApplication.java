@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @create: 2019-03-08 22:42
  **/
 @SpringBootApplication
-public class MainApp {
+public class DataManagerServerMainApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MainApp.class,args);
+        SpringApplication.run(DataManagerServerMainApplication.class,args);
     }
 }
