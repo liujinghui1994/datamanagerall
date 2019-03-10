@@ -3,6 +3,7 @@ package com.datamanager.server.impl.systemmanager.redismanager.utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
@@ -23,5 +24,9 @@ public class RedisPoolFactory {
 		jp.getResource();
 		return jp;
 	}
-	
+
+	public Jedis getJedis(){
+		return JedisPoolFactory().getResource();
+	}
+
 }
