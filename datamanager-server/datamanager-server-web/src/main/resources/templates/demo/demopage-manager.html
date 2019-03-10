@@ -6,27 +6,108 @@
     </script>
 </head>
 <body>
-<div id ="managerDemoListDiv">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>email</th>
-            <th>detail</th>
-        </tr>
-        </thead>
-        <tbody>
-        <div th:each="DemoVO : ${demoList}" >
+    <div id ="managerDemoListDiv">
+        <a class="btn btn-primary btn-sm waves-effect waves-light m-b-5"
+           href="#" data-toggle="modal" data-target="#addDemoModal"><i
+                class="fa fa-plus-circle"></i> <span>新增</span></a>
+        <table class="table table-striped">
+            <thead>
             <tr>
-                <td th:text="${DemoVO.id}"><a href="#"></a></td>
-                <td th:text="${DemoVO.name}"><a href="#"></a></td>
-                <td th:text="${DemoVO.email}"><a href="#"></a></td>
-                <td th:text="${DemoVO.detail}"><a href="#"></a></td>
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>detail</th>
             </tr>
+            </thead>
+            <tbody>
+            <div th:each="DemoVO : ${demoList}" >
+                <tr>
+                    <td th:text="${DemoVO.id}"><a href="#"></a></td>
+                    <td th:text="${DemoVO.name}"><a href="#"></a></td>
+                    <td th:text="${DemoVO.email}"><a href="#"></a></td>
+                    <td th:text="${DemoVO.detail}"><a href="#"></a></td>
+                    <td>
+                        <a class="btn btn-primary btn-sm waves-effect waves-light m-b-5"
+                           href="#" data-toggle="modal" data-target="#editDemoModal" onclick="editDemo(this)"><i
+                                class="fa fa-edit"></i> <span>编辑</span></a>
+                        <a href="javascript:void(0)" th:onclick="'delDemo('+${DemoVO.id}+');'"
+                           class="btn btn-danger btn-sm waves-effect waves-light m-b-5"><i
+                                class="fa fa-trash-o"></i> <span>删除</span></a>
+                    </td>
+                </tr>
+            </div>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="addDemoModal" role="dialog">
+        <div class="row">
+            <div class="col-md-12" style="padding: 20px;">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <form id="addDemoForm">
+                            <div class="form-group">
+                                <label class="sr-only">编号</label>
+                                <input type="text" id="id" name="id" class="form-control" placeholder="请输入编号" required="required" aria-required="true"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only">名称</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="请输入名称" required="required" aria-required="true"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only">邮箱</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="请输入右键"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only">详情</label>
+                                <input type="text" id="detail" name="detail" class="form-control" placeholder="请输入详情"/>
+                            </div>
+
+                            <button type="button" class="btn btn-success waves-effect waves-light m-l-10" onclick="addDemo()">保存</button>
+                        </form>
+                    </div> <!-- panel-body -->
+                </div> <!-- panel -->
+            </div> <!-- col -->
         </div>
-        </tbody>
-    </table>
-</div>
+    </div>
+
+
+    <div class="modal fade" id="editDemoModal" role="dialog">
+        <div class="row">
+            <div class="col-md-12" style="padding: 20px;">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <form id="editDemoForm">
+                            <div class="form-group">
+                                <label class="sr-only">编号</label>
+                                <input type="text" id="id" name="id" class="form-control" placeholder="请输入编号" required="required" aria-required="true"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only">名称</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="请输入名称" required="required" aria-required="true"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only">邮箱</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="请输入右键"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only">详情</label>
+                                <input type="text" id="detail" name="detail" class="form-control" placeholder="请输入详情"/>
+                            </div>
+
+                            <button type="button" class="btn btn-success waves-effect waves-light m-l-10" onclick="saveEditDemo()">保存</button>
+                        </form>
+                    </div> <!-- panel-body -->
+                </div> <!-- panel -->
+            </div> <!-- col -->
+        </div>
+    </div>
+
 </body>
 </html>
