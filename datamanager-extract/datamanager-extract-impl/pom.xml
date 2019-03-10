@@ -10,6 +10,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>datamanager-extract-impl</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.datamanager</groupId>
+            <artifactId>datamanager-extract-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.datamanager</groupId>
+            <artifactId>datamanager-extract-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 
 </project>

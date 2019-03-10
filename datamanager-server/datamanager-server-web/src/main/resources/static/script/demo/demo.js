@@ -14,7 +14,6 @@ function addDemo() {
     var name = $('#addDemoForm #name').val();
     var email = $('#addDemoForm #email').val();
     var detail = $('#addDemoForm #detail').val();
-
     $.ajax({
         url: '/demo/addDemo',
         type: "post",
@@ -26,11 +25,17 @@ function addDemo() {
             detail:detail
         },
         success:function(data){
-            $("#addDemoModal").modal('hide');
+            $('#addDemoModal').modal('hide');//隐藏modal
+            $('.modal-backdrop').remove();//去掉遮罩层
+            $('#logAndReg').hide();
+            $('#log')
             loadManagerDemo();
         },
         error:function(data){
-            $("#addDemoModal").modal('hide');
+            $('#addDemoModal').modal('hide');//隐藏modal
+            $('.modal-backdrop').remove();//去掉遮罩层
+            $('#logAndReg').hide();
+            $('#log')
             loadManagerDemo();
         }
     });
@@ -67,11 +72,17 @@ function saveEditDemo() {
             detail:detail
         },
         success:function(data){
-            $("#editDemoModal").modal('hide');
+            $('#editDemoModal').modal('hide');//隐藏modal
+            $('.modal-backdrop').remove();//去掉遮罩层
+            $('#logAndReg').hide();
+            $('#log')
             loadManagerDemo();
         },
         error:function(data){
-            $("#editDemoModal").modal('hide');
+            $('#editDemoModal').modal('hide');//隐藏modal
+            $('.modal-backdrop').remove();//去掉遮罩层
+            $('#logAndReg').hide();
+            $('#log')
             loadManagerDemo();
         }
     });

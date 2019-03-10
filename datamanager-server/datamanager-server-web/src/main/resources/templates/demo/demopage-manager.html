@@ -39,8 +39,8 @@
             </tbody>
         </table>
     </div>
-
-    <div class="modal fade" id="addDemoModal" role="dialog">
+    <!--div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"-->
+    <div class="modal fade" id="addDemoModal" tabindex="-1"  role="dialog"  aria-hidden="true">
         <div class="row">
             <div class="col-md-12" style="padding: 20px;">
                 <div class="panel panel-primary">
@@ -65,8 +65,9 @@
                                 <label class="sr-only">详情</label>
                                 <input type="text" id="detail" name="detail" class="form-control" placeholder="请输入详情"/>
                             </div>
-
-                            <button type="button" class="btn btn-success waves-effect waves-light m-l-10" onclick="addDemo()">保存</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <!--onclick="addDemo()"-->
+                            <button type="button" class="btn btn-success waves-effect waves-light m-l-10" data-dismiss="modal" onclick="addDemo()" >保存</button>
                         </form>
                     </div> <!-- panel-body -->
                 </div> <!-- panel -->
@@ -75,7 +76,7 @@
     </div>
 
 
-    <div class="modal fade" id="editDemoModal" role="dialog">
+    <div class="modal fade" id="editDemoModal" role="dialog" aria-hidden="true">
         <div class="row">
             <div class="col-md-12" style="padding: 20px;">
                 <div class="panel panel-primary">
@@ -100,8 +101,8 @@
                                 <label class="sr-only">详情</label>
                                 <input type="text" id="detail" name="detail" class="form-control" placeholder="请输入详情"/>
                             </div>
-
-                            <button type="button" class="btn btn-success waves-effect waves-light m-l-10" onclick="saveEditDemo()">保存</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-success waves-effect waves-light m-l-10" onclick="saveEditDemo()" data-dismiss="modal">保存</button>
                         </form>
                     </div> <!-- panel-body -->
                 </div> <!-- panel -->
