@@ -18,7 +18,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@RequestMapping("login")
+/**
+ * 登陆模块Controller
+ */
+@RequestMapping("/login")
 @Controller
 public class LoginManagerController {
 

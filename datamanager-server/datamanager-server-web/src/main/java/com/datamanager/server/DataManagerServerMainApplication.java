@@ -16,7 +16,6 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @SpringBootApplication(scanBasePackages = {"com.datamanager.server.web","com.datamanager.server.api","com.datamanager.server.impl"})
 @MapperScan("com.datamanager.server.api.**.dao")
 public class DataManagerServerMainApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(DataManagerServerMainApplication.class,args);
     }

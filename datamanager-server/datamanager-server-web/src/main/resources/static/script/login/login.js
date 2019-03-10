@@ -15,7 +15,7 @@ function doLogin(){
         },
         success:function(data){
             // alert(data.resultMessage);
-            window.location.href="/productManage/listDefaultProducts";
+            window.location.href="/datamanager/index";
         },
         error:function(data){
             // alert(data.resultMessage);

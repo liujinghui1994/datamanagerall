@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script>
+        window.onload = function() { loadSearchDemo()}
+    </script>
+</head>
+<body>
+    <div id ="searchDemoListDiv">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div th:each="DemoVO : ${demoList}" >
+                    <tr>
+                        <td th:text="${DemoVO.id}"><a href="#"></a></td>
+                        <td th:text="${DemoVO.name}"><a href="#"></a></td>
+                        <td th:text="${DemoVO.email}"><a href="#"></a></td>
+                        <td th:text="${DemoVO.detail}"><a href="#"></a></td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

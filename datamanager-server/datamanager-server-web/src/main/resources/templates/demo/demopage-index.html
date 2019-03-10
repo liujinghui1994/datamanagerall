@@ -1,0 +1,12 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="index">
+
+    <!--获取资源文件中的图片-->
+    <img th:src="@{${'/images/绘图1.png'}}" alt="">
+    <!--如果希望后台动态获取地址，例如：获取model中的DefaultProductVO，他会解析属性productImg-->
+    <!--<img th:src="@{${DefaultProductVO.productImg}}" alt="">-->
+
+    <!--有疑问 看博客https://blog.csdn.net/hry2015/article/details/73476973-->
+</div>
+</html>

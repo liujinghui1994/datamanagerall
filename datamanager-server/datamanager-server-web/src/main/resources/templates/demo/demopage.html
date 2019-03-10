@@ -1,0 +1,44 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript" th:src="@{/script/demo/demo.js}"></script>
+</head>
+<body>
+    <div th:fragment="demopage">
+        <!-- SECTION -->
+        <div class="section col-md-2">
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#demotab1" >demo概述</a></li>
+                    <li><a data-toggle="tab" href="#demotab2" onclick="loadSearchDemo()" >demo查询</a></li>
+                    <li><a data-toggle="tab" href="#demotab3" onclick="loadManagerDemo()" >demo维护</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /SECTION -->
+
+        <!-- Products tab & slick -->
+        <div class="col-md-9">
+            <div class="row">
+                <div class="products-tabs">
+                    <!-- tab首页 -->
+                    <div id="demotab1" class="tab-pane active">
+                        <div th:replace="demo/demopage-index.html :: index"></div>
+                    </div>
+                    <!-- tab元数据管理 -->
+                    <div id="demotab2" class="tab-pane">
+                        <div th:include="demo/demopage-search"></div>
+                    </div>
+                    <!-- tab标准管理 -->
+                    <div id="demotab3" class="tab-pane">
+                        <div th:replace="demo/demopage-manager"></div>
+                    </div>
+                    <!-- /tab -->
+                </div>
+            </div>
+        </div>
+        <!-- Products tab & slick -->
+
+    </div>
+</body>
+</html>
